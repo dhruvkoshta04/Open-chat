@@ -3,6 +3,7 @@ import React from 'react'
 import Navbar from './components/Navbar';
 import { auth } from './firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import Chat from './components/Chat';
 
 
 const style = {
@@ -17,7 +18,7 @@ function App() {
     <div className={style.appContainer}>
       <section className={style.sectionContainer}>
         <Navbar />
-        {/* {user ? <Chat /> : null} */}
+        {user ? <Chat /> : null}
       </section>
     </div>
   );

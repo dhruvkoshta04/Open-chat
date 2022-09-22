@@ -28,17 +28,19 @@ function Chat() {
     return () => unsubscribe();
   }, []);
 
+  
+
   return (
     <>
-      <main className={style.main}>
+      <main className={style.main} style={{overflowY: 'scroll'}}>
         {messages &&
           messages.map((message) => (
             <Message key={message.id} message={message} />
           ))}
+      <div ref={scroll}></div>
       </main>
 
       <SendMessage scroll={scroll} />
-      <span ref={scroll}></span>
     </>
   );
 }
